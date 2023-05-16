@@ -1,4 +1,4 @@
-//
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 
@@ -26,6 +26,8 @@ contract storage1{
 
     People public person = People({name:"kev",age:22});
 
+    mapping(string => uint256) public findNumber; 
+
 
     //Creating arrays
     struct Students{
@@ -50,6 +52,7 @@ contract storage1{
     } 
     function addStudent(string memory jina,uint256 admission) public{
         students.push(Students(admission,jina));
+        findNumber[jina] = admission;
     }
 
 
